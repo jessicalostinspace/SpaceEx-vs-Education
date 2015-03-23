@@ -1,0 +1,59 @@
+---
+title: "Education vs. Space Exploration"
+date: "March 23, 2015"
+output:
+  html_document:
+    theme: cerulean
+---
+
+<!-- For more info on RMarkdown see http://rmarkdown.rstudio.com/ -->
+
+<!-- Enter the code required to load your data in the space below. The data will be loaded but the line of code won't show up in your write up (echo=FALSE) in order to save space-->
+```{r echo=FALSE}
+load(url("http://bit.ly/dasi_gss_data"))
+```
+
+<!-- In the remainder of the document, add R code chunks as needed -->
+
+### Introduction:
+
+This purpose of this project is to answer the question of whether or not the level of an individual's education influences their opinion on funding of the government's space exploration program. In the survey, the individual's were asked: 
+
+> "We are faced with many problems in this country, none of which       can be solved easily or inexpensively. I'm going to name some of        these problems, and for each one I'd like you to tell me whether       you think we're spending too much money on it, too little money,       or about the right amount. a. Space exploration program."
+
+### Data:
+
+```{r}
+#Space Exploration opinion
+table(gss$natspac)
+```
+
+```{r}
+#Degree (level of education)
+table(gss$degree)
+```
+
+
+### Exploratory data analysis:
+
+```{r}
+ plot(gss$degree, gss$natspac)
+title("Level of Education vs. Space Exploration Funding", xlab= "Degree", ylab = "Space Exploration Funding")
+```
+
+```{r}
+summary(gss$degree)
+
+summary(gss$natspac)
+```
+
+
+### Inference:
+
+Insert inference section here...
+
+### Conclusion:
+
+Insert conclusion here...
+
+
